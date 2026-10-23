@@ -1,0 +1,91 @@
+# ─────────────────────────────────────────
+# Python
+# ─────────────────────────────────────────
+
+# Compiled bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+.eggs/
+
+# ─────────────────────────────────────────
+# Virtual Environments
+# ─────────────────────────────────────────
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# ─────────────────────────────────────────
+# Environment & Secrets
+# ─────────────────────────────────────────
+
+# Never commit API keys, passwords, or secrets
+.env
+.env.*
+*.secret
+secrets.py
+config.py
+
+# ─────────────────────────────────────────
+# Database (SQLite)
+# ─────────────────────────────────────────
+
+# The live database file — auto-created on first run via init_db()
+# Committing this would expose all shortened URLs and click data
+*.db
+*.sqlite
+*.sqlite3
+
+# ─────────────────────────────────────────
+# Flask / pytest
+# ─────────────────────────────────────────
+instance/
+.webassets-cache
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# ─────────────────────────────────────────
+# IDEs & Editors
+# ─────────────────────────────────────────
+
+# VS Code
+.vscode/
+
+# PyCharm / JetBrains
+.idea/
+*.iml
+
+# Vim / Emacs swap files
+*.swp
+*.swo
+*~
+
+# ─────────────────────────────────────────
+# Operating System
+# ─────────────────────────────────────────
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.fuse_hidden*
+.Trash-*

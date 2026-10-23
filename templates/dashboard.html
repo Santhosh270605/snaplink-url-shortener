@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — SnapLink{% endblock %}
+
+{% block content %}
+
+<section class="dashboard-section" aria-labelledby="dashboard-heading">
+  <div class="dashboard-header">
+    <div>
+      <h1 id="dashboard-heading" class="dashboard-title">Your Links</h1>
+      <p class="dashboard-subtitle">All your shortened URLs in one place</p>
+    </div>
+    <a href="/" class="btn btn-primary" aria-label="Create a new short URL">+ New Link</a>
+  </div>
+
+  <!-- ── Stats Bar ─────────────────────── -->
+  <div class="stats-bar" aria-label="Overall statistics">
+    <div class="stat-item">
+      <span class="stat-value" id="stat-total">—</span>
+      <span class="stat-label">Total Links</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-value" id="stat-clicks">—</span>
+      <span class="stat-label">Total Clicks</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-value" id="stat-top">—</span>
+      <span class="stat-label">Most Clicked</span>
+    </div>
+  </div>
+
+  <!-- ── Loading State ─────────────────── -->
+  <div id="loading-state" class="empty-state" aria-live="polite">
+    <div class="loading-spinner"></div>
+    <p>Loading your links…</p>
+  </div>
+
+  <!-- ── Empty State ───────────────────── -->
+  <div id="empty-state" class="empty-state hidden" aria-live="polite">
+    <div class="empty-icon">🔗</div>
+    <h2 class="empty-title">No links yet</h2>
+    <p class="empty-desc">Go shorten your first URL!</p>
+    <a href="/" class="btn btn-primary">Create a Short URL</a>
+  </div>
+
+  <!-- ── Links Table ───────────────────── -->
+  <div id="links-table-wrapper" class="table-wrapper hidden" role="region" aria-label="Links table">
+    <table class="links-table" id="links-table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Short URL</th>
+          <th scope="col">Original URL</th>
+          <th scope="col">Clicks</th>
+          <th scope="col">Created</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="links-tbody">
+        <!-- Rows injected by main.js -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% endblock %}

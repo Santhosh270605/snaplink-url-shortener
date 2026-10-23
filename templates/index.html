@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}SnapLink — Shorten Your URL{% endblock %}
+
+{% block content %}
+
+<!-- ── Hero Section ──────────────────────────────── -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-bg-orb orb-1"></div>
+  <div class="hero-bg-orb orb-2"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">✦ Fast &amp; Free URL Shortener</div>
+    <h1 id="hero-heading" class="hero-title">
+      Shorten URLs<br />
+      <span class="gradient-text">Instantly</span>
+    </h1>
+    <p class="hero-subtitle">
+      Transform long, messy links into clean short URLs.<br />
+      Track clicks and manage all your links from one dashboard.
+    </p>
+
+    <!-- ── Shorten Form ──────────────────── -->
+    <div class="card shorten-card" role="form" aria-label="URL shortener form">
+      <div class="input-group">
+        <input
+          type="url"
+          id="url-input"
+          class="url-input"
+          placeholder="Paste your long URL here... https://"
+          aria-label="Long URL to shorten"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="shorten-btn" class="btn btn-primary" aria-label="Shorten URL">
+          <span id="btn-text">Shorten</span>
+          <span id="btn-spinner" class="spinner hidden" aria-hidden="true"></span>
+        </button>
+      </div>
+      <p id="input-error" class="input-error hidden" role="alert"></p>
+    </div>
+
+    <!-- ── Result Card ───────────────────── -->
+    <div id="result-card" class="card result-card hidden" aria-live="polite" aria-label="Shortened URL result">
+      <div class="result-header">
+        <span class="result-badge">✅ URL Shortened!</span>
+      </div>
+      <div class="result-body">
+        <div class="result-row">
+          <span class="result-label">Short URL</span>
+          <div class="result-link-group">
+            <a id="short-url-link" href="#" target="_blank" rel="noopener noreferrer" class="short-url-display"></a>
+            <button id="copy-btn" class="btn btn-copy" aria-label="Copy short URL to clipboard">
+              <span id="copy-icon">📋</span> Copy
+            </button>
+          </div>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Original URL</span>
+          <span id="original-url-display" class="original-url-display"></span>
+        </div>
+      </div>
+      <div class="result-actions">
+        <button id="shorten-another-btn" class="btn btn-ghost">Shorten Another</button>
+        <a href="/dashboard" class="btn btn-ghost">View Dashboard →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Features Section ──────────────────────────── -->
+<section class="features" aria-label="Features">
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3 class="feature-title">Instant Shortening</h3>
+      <p class="feature-desc">Get your short URL in milliseconds — no signup required.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3 class="feature-title">Click Analytics</h3>
+      <p class="feature-desc">Track how many times each link is clicked in real time.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <h3 class="feature-title">Reliable Redirects</h3>
+      <p class="feature-desc">Every short link redirects instantly with HTTP 302.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🗂️</div>
+      <h3 class="feature-title">Link Dashboard</h3>
+      <p class="feature-desc">Manage, view, and delete all your links from one place.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
